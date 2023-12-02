@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <audio id = "complete" src = "complete.mp3"></audio>
+    <audio id = "accomplish" src = "accomplish.mp3"></audio>
+    <div class="container">
+        <div class="nav">
+            <h2><i class="fa-solid fa-bullseye" style="color: #ffffff;"></i> To-Do List</h2>
+            <div class="user-input">
+                <input id = "input" type="text" placeholder=""><button onclick="addItem()">Add</button>
+            </div>
+        </div>
+        <p id = "question">Did you complete all your tasks? <span id = "finish"> Clear task list and play exit mission theme.</span></p>
+    </div>
+
+    <div class="container">
+        <div class="to-do-items">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
