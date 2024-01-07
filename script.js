@@ -8,7 +8,7 @@ const finish = document.getElementById("finish");
 const accomplish = document.getElementById("accomplish");
 
 document.addEventListener("DOMContentLoaded", function time(){
-    loadToDoItems();
+    setTimeout(loadToDoItems, 0);
     let today = new Date();
     let time = today.getHours();
 
