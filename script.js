@@ -8,7 +8,6 @@ const finish = document.getElementById("finish");
 const accomplish = document.getElementById("accomplish");
 
 document.addEventListener("DOMContentLoaded", function time(){
-    setTimeout(loadToDoItems, 0);
     let today = new Date();
     let time = today.getHours();
 
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function time(){
 input.addEventListener("keydown", function(event) {
     if(event.key === "Enter")
     addItem();
-    saveToDoItems();
 })
 
 function addItem() {
@@ -92,26 +90,9 @@ function deleteAllItems() {
     divParents.forEach(function(divParent) {
         divParent.remove();
     });
-
-    saveToDoItems();
 }
 
-function saveToDoItems() {
-    const items = Array.from(document.querySelectorAll('.item')).map(item => item.querySelector('div').textContent);
-    localStorage.setItem('toDoItems', JSON.stringify(items));
-}
 
-// Load to-do items from local storage
-function loadToDoItems() {
-    const storedItems = localStorage.getItem('toDoItems');
-    if (storedItems) {
-        const items = JSON.parse(storedItems);
-        items.forEach(item => {
-            input.value = item;
-            addItem();
-        });
-    }
-}
 
 // Event listener for the "finish" element
 finish.addEventListener("click", function() {
